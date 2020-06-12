@@ -43,7 +43,7 @@ function afficherlivre ($livre){
 	
 	function afficherlivres(){
 		//$sql="SElECT * From livre e inner join formationphp.livre a on e.id_livre= a.id_livre";
-		$sql="SELECT * From books ";
+		$sql="SElECT * From books";
 		$db = config::getConnexion();
 		try{
 		$liste=$db->query($sql);
@@ -53,31 +53,6 @@ function afficherlivre ($livre){
             die('Erreur: '.$e->getMessage());
         }	
 	}
-	function afficherlivres1(){
-		//$sql="SElECT * From livre e inner join formationphp.livre a on e.id_livre= a.id_livre";
-		$sql="SELECT * From books order by prix asc ";
-		$db = config::getConnexion();
-		try{
-		$liste=$db->query($sql);
-		return $liste;
-		}
-        catch (Exception $e){
-            die('Erreur: '.$e->getMessage());
-        }	
-	}
-function afficherlivres5(){
-		//$sql="SElECT * From livre e inner join formationphp.livre a on e.id_livre= a.id_livre";
-		$sql="SELECT * From books order by nom_livre asc ";
-		$db = config::getConnexion();
-		try{
-		$liste=$db->query($sql);
-		return $liste;
-		}
-        catch (Exception $e){
-            die('Erreur: '.$e->getMessage());
-        }	
-	}
-
 	function supprimerlivre($id_livre){
 		$sql="DELETE FROM books where id_livre= :id_livre";
 		$db = config::getConnexion();
@@ -137,18 +112,7 @@ try{
             die('Erreur: '.$e->getMessage());
         }
 	}
-	function recupererlivre1($nom_livre){
-		$sql="SELECT * from books where nom_livre like '%$nom_livre%'";
-		$db = config::getConnexion();
-		try{
-		$liste=$db->query($sql);
-		return $liste;
-		}
-        catch (Exception $e){
-            die('Erreur: '.$e->getMessage());
-        }
-	}
-
+	
 	function rechercherListelivres($tarif){
 		$sql="SELECT * from livre where tarifHoraire=$tarif";
 		$db = config::getConnexion();
@@ -160,18 +124,6 @@ try{
             die('Erreur: '.$e->getMessage());
         }
 	}
-	function afficherclients(){
-		//$sql="SElECT * From livre e inner join formationphp.livre a on e.id_livre= a.id_livre";
-		$sql="SELECT * From clients where role='Client' ";
-		$db = config::getConnexion();
-		try{
-		$liste=$db->query($sql);
-		return $liste;
-		}
-        catch (Exception $e){
-            die('Erreur: '.$e->getMessage());
-        }	
-	}
 }
-	
+
 ?>

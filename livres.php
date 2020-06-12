@@ -66,7 +66,7 @@ $liste1=$categorie->affichercategories();
             </a>
             </li>
             <li class="nav-item active ">
-            <a class="nav-link" href="./livres.php">
+            <a class="nav-link" href="livres.php">
               <i class="material-icons">Livres</i>
               <p>Livres</p>
             </a>
